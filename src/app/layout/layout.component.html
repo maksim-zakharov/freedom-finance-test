@@ -1,0 +1,27 @@
+<nz-layout class="layout" id="main-layout">
+  <app-header id="gheader"></app-header>
+  <nz-sider id="gnavi" nzCollapsible *ngIf="(model$ | async) as model" [nzCollapsed]="model.isCollapsed"
+            [nzWidth]="model.isCollapsed ? undefined: 280"
+            (nzCollapsedChange)="modelSubject.next({isCollapsed: $event})"
+            style="background:#001529"
+            [nzCollapsedWidth]="model.isCollapsed ? 88: undefined">
+    <ul nz-menu nzTheme="dark" [nzMode]="model.isCollapsed ? 'vertical' : 'inline'"
+        [nzInlineCollapsed]="model.isCollapsed">
+      <li>
+        <a nz-menu-item class="menu-item" routerLinkActive="ant-menu-item-selected" routerLink="/documents">
+          Документы
+        </a>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-content id="gmain" style="padding: 24px; min-height: 280px;">
+    <h2 *ngIf="(pageTitle$ | async) as pageTitle">{{pageTitle}}</h2>
+    <router-outlet>
+    </router-outlet>
+  </nz-content>
+  <nz-footer id="gfooter" style="text-align: center;">
+    <app-footer></app-footer>
+  </nz-footer>
+</nz-layout>
+
+

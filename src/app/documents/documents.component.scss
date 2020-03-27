@@ -1,0 +1,22 @@
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    margin-left: 20px;
+  }
+
+  button[nzType="success"] {
+    color: #fff;
+    background-color: #00bb23;
+    border-color: #00bb23;
+  }
+}
+
+.success {
+  color: #00bb23
+}
+
+.decline {
+  color: #ff4d4f
+}

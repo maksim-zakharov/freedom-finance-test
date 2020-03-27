@@ -1,0 +1,19 @@
+.message-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  right: 0;
+  left: 0;
+  flex-direction: column;
+  align-items: center;
+  bottom: 0;
+  top: 0;
+  padding-bottom: 20%;
+}
+
+:host {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f2f5;
+}

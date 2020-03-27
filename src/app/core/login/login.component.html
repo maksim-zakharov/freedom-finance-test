@@ -1,0 +1,32 @@
+<div class="curtain">
+  <div class="form-container">
+    <nz-card>
+      <h2>Freedom Finance HR</h2>
+      <form nz-form [formGroup]="form" class="login-form" (ngSubmit)="submitSubject.next(true)">
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Пожалуйста введите почту">
+            <nz-input-group [nzSuffix]="loginPrefix">
+              <input nz-input formControlName="login" placeholder="Логин">
+              <ng-template #loginPrefix>
+                <i nz-icon nzType="user"></i>
+              </ng-template>
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Пожалуйста введите пароль">
+            <nz-input-group [nzSuffix]="passwordPrefix">
+              <input nz-input formControlName="password" [type]="'password'" [placeholder]="'Пароль'">
+              <ng-template #passwordPrefix>
+                <i nz-icon nzType="lock"></i>
+              </ng-template>
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <button nz-button type="submit" [nzType]="'primary'" [nzLoading]="isLoading" [nzSize]="'large'">
+          Войти
+        </button>
+      </form>
+    </nz-card>
+  </div>
+</div>

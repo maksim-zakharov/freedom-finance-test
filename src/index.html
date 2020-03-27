@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Freedom Finance HR</title>
+
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" content="notranslate" />
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  <style>
+
+    h2 {
+      font-family: Arial, serif;
+      line-height: 20px;
+      font-size: 25px;
+      color: #2D2D2D;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 600 !important;
+    }
+
+    .global-spinner-container {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      transition: opacity .5s, z-index .5s;
+      position: absolute;
+      z-index: -1;
+    }
+
+    .global-spinner-container .spinner {
+      position: relative;
+      width: 68px;
+      height: 68px;
+      display: inline-block;
+      border-radius: 10px;
+    }
+
+    .global-spinner-container .spinner .circle {
+      opacity: 0;
+      position: absolute;
+      border-radius: 50%;
+      height: 0;
+      width: 0;
+      top: 34px;
+      left: 34px;
+      background-color: #3a3633;
+      animation: circle-spinner;
+      animation-duration: 1.35s;
+      animation-iteration-count: infinite;
+    }
+
+    .global-spinner-container .spinner .circle.circle2 {
+      animation-delay: 0.2s
+    }
+
+    @keyframes circle-spinner {
+      0% {
+        opacity: 1;
+        height: 0;
+        width: 0;
+        top: 34px;
+        left: 34px;
+      }
+      85% {
+        opacity: 0;
+        height: 68px;
+        width: 68px;
+        top: 0;
+        left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="global-spinner-container">
+  <h2>Freedom Finance HR</h2>
+  <div class="spinner">
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+  </div>
+</div>
+<script></script>
+<app-root></app-root>
+</body>
+</html>

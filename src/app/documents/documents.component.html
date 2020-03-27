@@ -1,0 +1,25 @@
+<nz-card *ngIf="document$ | async as document">
+  <ng-container *ngIf="isAccepted === undefined; else accepted">
+    <h2>{{document.title}}</h2>
+
+    <p>
+      {{document.text}}
+    </p>
+
+    <div class="buttons">
+      <button nz-button nzType="danger" (click)="decline(document.id)">Отклонить</button>
+      <button nz-button nzType="success" (click)="accept(document.id)">Утвердить</button>
+    </div>
+  </ng-container>
+
+  <ng-template #accepted>
+    <nz-result
+      [nzStatus]="isAccepted ? 'success' : 'error'"
+      [nzTitle]="message"
+    >
+      <div nz-result-extra>
+        <button nz-button nzType="primary" (click)="clearState()">Попробовать еще раз</button>
+      </div>
+    </nz-result>
+  </ng-template>
+</nz-card>
