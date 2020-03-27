@@ -6,6 +6,35 @@
       {{document.text}}
     </p>
 
+    <form [formGroup]="form" nz-form>
+      <nz-form-item>
+        <nz-form-label nzRequired>
+          Резолюция
+        </nz-form-label>
+        <nz-form-control nzErrorTip="Не выбрана резолюция">
+          <nz-select formControlName="resolution" nzAllowClear nzPlaceHolder="Выберите резолюцию">
+            <nz-option nzValue="fullApproved" nzLabel="Полностью согласен"></nz-option>
+            <nz-option nzValue="approved" nzLabel="Согласен"></nz-option>
+            <nz-option nzValue="decline" nzLabel="Против"></nz-option>
+            <nz-option nzValue="fullDecline" nzLabel="Категорически против"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>
+          Комментарий
+        </nz-form-label>
+        <nz-form-control>
+      <textarea
+        nz-input
+        rows="6"
+        placeholder="Введите комментарий"
+        formControlName="comment"
+      ></textarea>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+
     <div class="buttons">
       <button nz-button nzType="danger" (click)="decline(document.id)">Отклонить</button>
       <button nz-button nzType="success" (click)="accept(document.id)">Утвердить</button>

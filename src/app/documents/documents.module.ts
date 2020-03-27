@@ -2,8 +2,9 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {DocumentsComponent} from './documents.component';
 import {DocumentsRoutingModule} from './documents-routing.module';
-import {NzButtonModule, NzCardModule, NzResultModule} from 'ng-zorro-antd';
+import {NzButtonModule, NzCardModule, NzFormModule, NzInputModule, NzResultModule, NzSelectModule} from 'ng-zorro-antd';
 import {DocumentResolver} from './document.resolver';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,12 @@ import {DocumentResolver} from './document.resolver';
     DocumentsRoutingModule,
     NzCardModule,
     NzButtonModule,
-    NzResultModule
+    NzResultModule,
+    NzInputModule,
+    FormsModule,
+    NzSelectModule,
+    ReactiveFormsModule,
+    NzFormModule
   ],
   providers: [DocumentResolver]
 })
